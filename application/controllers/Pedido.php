@@ -29,10 +29,6 @@ class Pedido extends CI_Controller {
         $pedido['id_producto'] = $this->input->post('id_producto');
         if(!$pedido['obrero'] = $this->input->post('obrero'))
             $falta[] = 'Obrero';
-        if(!$pedido['fecha_pedido'] = $this->input->post('fecha_pedido'))
-            $falta[] = 'Fecha Pedido';
-        if(!$pedido['estado'] = $this->input->post('estado'))
-            $falta[] = 'Estado';
         if(!$pedido['cantidad'] = $this->input->post('cantidad'))
             $falta[] = 'Cantidad';
 

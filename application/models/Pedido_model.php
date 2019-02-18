@@ -9,6 +9,7 @@ class Pedido_model extends CI_Model{
     }
     public function agregar_pedido($pedido){
         $pedido['fecha_pedido'] = date('Y-m-d - H:i:s');
+        $pedido['estado'] = 1;
         $this->db->insert('pedido', $pedido);
         return $this->db->affected_rows()>0;
     }
