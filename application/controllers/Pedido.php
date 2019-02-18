@@ -22,10 +22,18 @@ class Pedido extends CI_Controller {
         $this->session->set_flashdata('datos_ingresados', $pedido);
         redirect('/producto/error');
     }
+    public function editar_pedido(){
+        $pedido = $this->verificar_datos();
+        if($this->Pedido_model->editar_pedido($pedido))
+            redirect('/pedidos/editado');
+        $this->session->set_flashdata('datos_ingresados', $pedido);
+        redirect('/pedidos/error');
+    }
 
     public function verificar_datos(){
         log_message('error', '--Buscando datos--');
         $falta = '';
+        $pedido['id_pedido'] = $this->input->post('id_pedido');
         $pedido['id_producto'] = $this->input->post('id_producto');
         if(!$pedido['obrero'] = $this->input->post('obrero'))
             $falta[] = 'Obrero';

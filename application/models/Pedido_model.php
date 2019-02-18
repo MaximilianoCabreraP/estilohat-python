@@ -13,4 +13,9 @@ class Pedido_model extends CI_Model{
         $this->db->insert('pedido', $pedido);
         return $this->db->affected_rows()>0;
     }
+    public function editar_pedido($pedido){
+        $this->db->where('id_pedido', $pedido['id_pedido'])
+                 ->update('pedido', $pedido);
+        return $this->db->affected_rows()>0;
+    }
 }
