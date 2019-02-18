@@ -1,0 +1,94 @@
+.clear{
+    clear:both;
+}
+header.header-carrito {
+    background:url("https://www.bidcom.com.ar/images/blue90.png");
+    padding: 0;
+    position: sticky;
+    z-index: 2000;
+}
+body{
+    background: #f5f5f5;
+}
+.breadcrumb{
+    background: transparent;
+    padding:0;
+    margin:8px 0 2px 0;
+}
+    .breadcrumb a{
+        color:#666;
+    }
+.cabecera-panel{
+    padding-bottom: 15px;
+}
+/**********************************
+HOME PANEL  					 */
+.home-panel .btn-info{
+    font-size: 16px;
+}
+.home-panel .btn-info i{
+    font-size: 36px;
+}
+
+/**********************************
+Select filtro  					 */
+.select2-selection--single {
+    height: 38px!important;
+    border:1px solid rgba(0,0,0,.15)!important;
+}
+.select2-selection__rendered{
+    line-height: 34px!important;
+}
+.select2-selection__arrow{
+    height: 38px!important;
+}
+.select2-container,
+.select2-search__field{
+    width:100%!important;
+}
+#mceu_20{
+    width: 100%!important;
+}
+.content-respuesta-faq{
+    padding:20px;
+}
+.card{
+    margin-bottom: 3px;
+}
+    .card .btn-link{
+        color: #666;
+        text-align: left;
+    }
+    .card form{
+        margin:20px;
+    }
+.card-faqs .btn{
+    text-align: left;
+}
+.item-pregunta i{
+    display: block;
+    position: absolute;
+    top:9px;
+    right:10px;
+    font-size: 20px;
+}
+.item-pregunta i.fa-check-circle{
+    color:#28a745;
+}
+.item-pregunta i.fa-exclamation-circle{
+    color:#ffc107;
+}
+.cabecera-panel{
+    padding:20px 0;
+}
+.titulo-panel{
+    font-size: 22px;
+    font-weight: normal;
+    text-align: left;
+    display:block;
+}
+#filtro-panel{
+    border-top:1px solid #E2E2E2;
+    padding: 20px 0 0 0;
+    margin-bottom: 20px;
+}
