@@ -108,7 +108,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <select class="lista_productos" multiple="true" name="id_producto[]">
-                                            <option selected disabled>Productos</option>
+                                            <option selected disabled value=""></option>
                                             <?php foreach($productos as $producto){ ?>
                                                 <option id="<?php echo $producto['id_producto']; ?>" value="<?php echo $producto['nombre']; ?>">
                                                     <?php echo $producto['nombre']; ?>
@@ -212,7 +212,6 @@
                                             <!-- Productos -->
                                                 Productos: 
                                                 <select class="lista_productos" multiple="true" name="id_producto[]">
-                                                    <option selected disabled>Productos</option>
                                                     <?php foreach($productos as $producto){ ?>
                                                         <option id="<?php echo $producto['id_producto']; ?>" value="<?php echo $producto['nombre']; ?>"
                                                             <?php if(isset($datos_ingresados) && !empty($datos_ingresados)){ 
