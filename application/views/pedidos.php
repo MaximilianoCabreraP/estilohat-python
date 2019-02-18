@@ -77,7 +77,7 @@
                                             <option selected disabled>Productos</option>
                                             <?php foreach($productos as $producto){ ?>
                                                 <option id="<?php echo $producto['id_producto']; ?>" value="<?php echo $producto['nombre']; ?>">
-                                                    <?php echo $pedido['nombre']; ?>
+                                                    <?php echo $producto['nombre']; ?>
                                                 </option>
                                             <?php } ?>
                                         </select>
