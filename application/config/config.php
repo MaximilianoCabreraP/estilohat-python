@@ -22,8 +22,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     | a PHP script and you can easily do that on your own.
     |
 */
-//$config['base_url'] = 'https://panel.estilohat.com';
-$config['base_url'] = 'https://'.$_SERVER["HTTP_HOST"];
+$config['base_url'] = 'https://panel-dev.estilohat.com/';
+#$config['base_url'] = 'https://'.$_SERVER["HTTP_HOST"];
 /*
     |--------------------------------------------------------------------------
     | Index File
