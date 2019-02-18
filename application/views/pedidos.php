@@ -222,6 +222,17 @@
                                                                         echo '';
                                                                     }
                                                                 }
+                                                            }else{
+                                                                $prods = implode(', ',$pedido['ids_producto']);
+                                                                log_message('error', 'Prods: '.$prods);
+                                                                foreach($prods as $p){
+                                                                    log_message('error', 'P: '.$p);
+                                                                    if($p == $producto['id_producto']){
+                                                                        echo 'selected="selected"';
+                                                                    }else{
+                                                                        echo '';
+                                                                    }
+                                                                }
                                                             } ?>
                                                         >
                                                             <?php echo $producto['nombre']; ?>
