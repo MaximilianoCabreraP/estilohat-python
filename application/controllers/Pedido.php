@@ -5,14 +5,18 @@ class Pedido extends CI_Controller {
     public function index($msg = ""){
         $pedidos = $this->Pedido_model->buscar_pedidos();
         $productos = $this->Producto_model->buscar_productos();
+        $falta = $this->session->flashdata('falta');
         $this->load->view('header', ['title' => 'Estilo Hat | Pedidos']);
-        $this->load->view('pedidos', ['pedidos' => $pedidos, 
-                                      'productos' => $productos, 
+        $this->load->view('pedidos', ['pedidos' => $pedidos,
+                                      'productos' => $productos,
+                                      'falta' => $falta,
                                       'msg' => $msg]);
         $this->load->view('footer');
     }
     public function agregar_pedido(){
+        log_message('error', '------------Agregar Pedido------------');
         $pedido = $this->verificar_datos();
+        log_message('error', '--Volvio el pedido--');
         if($this->Pedido_model->agregar_pedido($pedido))
             redirect('/pedidos/ok');
         $this->session->set_flashdata('datos_ingresados', $pedido);
@@ -20,6 +24,7 @@ class Pedido extends CI_Controller {
     }
 
     public function verificar_datos(){
+        log_message('error', '--Buscando datos--');
         $falta = '';
         $pedido['id_producto'] = $this->input->post('id_producto');
         if(!$pedido['obrero'] = $this->input->post('obrero'))
@@ -32,10 +37,12 @@ class Pedido extends CI_Controller {
             $falta[] = 'Cantidad';
 
         if(!empty($falta)){
+            log_message('error', '-Faltan Datos-');
             $this->session->set_flashdata('datos_ingresados', $pedido);
             $this->session->set_flashdata('falta', $falta);
             redirect('/pedidos');
         }
+        log_message('error', '-Datos ok-');
         return $pedido;
     }
 }
