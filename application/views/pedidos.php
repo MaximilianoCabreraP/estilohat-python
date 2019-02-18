@@ -46,41 +46,41 @@
                 echo    '<div class="alert alert-danger text-center" role="alert">
                             Hubo un error, volvé a intentarlo.
                         </div>';
-            }if($falta!=null){
-                $msj = '<div class="alert alert-danger text-center" role="alert">
-                            Faltan los siguientes datos: ';
-                $val = 0;
-                $mensaje = "";
-                foreach ($falta as $e){
-                    if($val != 0){
-                        if($e == 'Obrero'){
-                            $mensaje .= 'Obrero';
-                        }elseif($e == 'Fecha Pedido'){
-                            if($mensaje != "")
-                                $mensaje .= " | ";
-                            $mensaje .= 'Fecha Pedido';
-                        }elseif($e == 'Estado'){
-                            if($mensaje != "")
-                                $mensaje .= " | ";
-                            $mensaje .= 'Estado';
-                        }elseif($e == 'Cantidad'){
-                            if($mensaje != "")
-                                $mensaje .= " | ";
-                            $mensaje .= 'Cantidad';
-                        }else{
-                            if($mensaje != "")
-                                $mensaje .= " | ";
-                            $mensaje .= $e;
-                        }
-                        echo $mensaje;
-                    }else{
-                        echo ''.$e;
-                        $val = 1;
-                    }
-                }
-                $msj .= '</div>';
-                echo $msj;
             }
+        }if($falta!=null){
+            $msj = '<div class="alert alert-danger text-center" role="alert">
+                        Faltan los siguientes datos: ';
+            $val = 0;
+            $mensaje = "";
+            foreach ($falta as $e){
+                if($val != 0){
+                    if($e == 'Obrero'){
+                        $mensaje .= 'Obrero';
+                    }elseif($e == 'Fecha Pedido'){
+                        if($mensaje != "")
+                            $mensaje .= " | ";
+                        $mensaje .= 'Fecha Pedido';
+                    }elseif($e == 'Estado'){
+                        if($mensaje != "")
+                            $mensaje .= " | ";
+                        $mensaje .= 'Estado';
+                    }elseif($e == 'Cantidad'){
+                        if($mensaje != "")
+                            $mensaje .= " | ";
+                        $mensaje .= 'Cantidad';
+                    }else{
+                        if($mensaje != "")
+                            $mensaje .= " | ";
+                        $mensaje .= $e;
+                    }
+                    echo $mensaje;
+                }else{
+                    echo ''.$e;
+                    $val = 1;
+                }
+            }
+            $msj .= '</div>';
+            echo $msj;
         }
     ?>
 <div class="container">
@@ -177,7 +177,7 @@
                                                 </a>
                                             <!-- delete -->
                                                 <?php //if($this->session->type === 'admin'){ ?>
-                                                    <a href="/Pedido/eliminar_pedido/<?php echo $pedido['id_pedido']; ?>" onclick='return eliminar_pedido(JSON.stringify("<?php echo $pedido["nombre"]; ?>"))' class="btn btn-info btn-rounded btn-sm">
+                                                    <a href="/Pedido/eliminar_pedido/<?php echo $pedido['id_pedido']; ?>" onclick='return eliminar_pedido(JSON.stringify("<?php echo $pedido["obrero"]; ?>"))' class="btn btn-info btn-rounded btn-sm">
                                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                                     </a>
                                                 <?php //} ?>

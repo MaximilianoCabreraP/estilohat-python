@@ -38,6 +38,9 @@ class Pedido extends CI_Controller {
 
         if(!empty($falta)){
             log_message('error', '-Faltan Datos-');
+            foreach($falta as $k=>$v){
+                log_message('error', $k.': '.$v);
+            }
             $this->session->set_flashdata('datos_ingresados', $pedido);
             $this->session->set_flashdata('falta', $falta);
             redirect('/pedidos');
