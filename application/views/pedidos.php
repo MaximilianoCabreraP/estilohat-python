@@ -115,7 +115,7 @@
                                     <!-- ID Pedido-->
                                         <td><?php echo $pedido['id_pedido']; ?></td>
                                     <!-- Nombre -->
-                                        <td><a href="" class="link-texto" data-toggle="modal" data-target="#modal_editar_pedido<?php echo $pedido['id_pedido']; ?>"><?php echo sustituto_tilde($pedido['nombre']); ?></a></td>
+                                        <td><a href="" class="link-texto" data-toggle="modal" data-target="#modal_editar_pedido<?php echo $pedido['id_pedido']; ?>"><?php echo sustituto_tilde($pedido['obrero']); ?></a></td>
                                     <!-- Fecha -->
                                         <td><?php $date = new DateTime($pedido['fecha_pedido']); echo $date->format('d-m-Y'); ?></td>
                                     <!-- Cantidad -->
