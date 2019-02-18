@@ -1,7 +1,7 @@
 <?php
 class Producto_model extends CI_Model{
     function __construct(){
-        $this->db = $this->load->database("estilohat",TRUE);
+		$this->load->database();
         date_default_timezone_set('America/Argentina/Buenos_Aires');
     }
     public function buscar_productos(){

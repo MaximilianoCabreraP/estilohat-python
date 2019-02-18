@@ -14,22 +14,22 @@ class Producto extends CI_Controller {
     public function agregar_producto(){
         $producto = $this->verificar_datos();
         if($this->Producto_model->agregar_producto($producto))
-            redirect('/producto/ok');
+            redirect('/productos/ok');
         $this->session->set_flashdata('datos_ingresados', $producto);
-        redirect('/producto/error');
+        redirect('/productos/error');
     }
     public function editar_producto(){
         $producto = $this->verificar_datos();
         if($this->Producto_model->editar_producto($producto))
-            redirect('/producto/editado');
+            redirect('/productos/editado');
         $this->session->set_flashdata('datos_ingresados', $producto);
-        redirect('/producto/error');
+        redirect('/productos/error');
     }
     public function duplicar_producto(){}
     public function eliminar_producto($id){
         if($this->Producto_model->eliminar_producto($id))
-            redirect('/producto/eliminado');
-        redirect('/producto/error');
+            redirect('/productos/eliminado');
+        redirect('/productos/error');
     }
     public function verificar_datos(){
         $falta = '';
@@ -54,7 +54,7 @@ class Producto extends CI_Controller {
         if(!empty($falta)){
             $this->session->set_flashdata('datos_ingresados', $producto);
             $this->session->set_flashdata('falta', $falta);
-            redirect('/producto');
+            redirect('/productos');
         }
         return $producto;
     }
