@@ -4,8 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Pedido extends CI_Controller {
     public function index($msg = ""){
         $pedidos = $this->Pedido_model->buscar_pedidos();
+        $productos = $this->Producto_model->buscar_productos();
         $this->load->view('header', ['title' => 'Estilo Hat | Pedidos']);
-        $this->load->view('pedidos', ['pedidos' => $pedidos, 'msg' => $msg]);
+        $this->load->view('pedidos', ['pedidos' => $pedidos, 
+                                      'productos' => $productos, 
+                                      'msg' => $msg]);
         $this->load->view('footer');
     }
     public function agregar_pedido(){
