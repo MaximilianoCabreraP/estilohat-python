@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# prevent unauthorized access
+RedirectMatch 403 ^/(system).*$
+
+# force https protocol
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# don't show index.php
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php/$1 [L]
