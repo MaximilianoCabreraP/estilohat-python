@@ -213,7 +213,7 @@
                                                 Productos: 
                                                 <select class="lista_productos" multiple="true" name="ids_producto[]">
                                                     <?php foreach($productos as $producto){ ?>
-                                                        <option id="<?php echo $producto['id_producto']; ?>" value="<?php echo $producto['nombre']; ?>"
+                                                        <option id="<?php echo $producto['id_producto']; ?>" value="<?php echo $producto['id_producto']; ?>"
                                                             <?php 
                                                                 $prods = explode(',',$pedido['ids_producto']);
                                                                 foreach($prods as $p){
