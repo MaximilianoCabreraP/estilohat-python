@@ -223,7 +223,7 @@
                                                                     }
                                                                 }
                                                             }else{
-                                                                $prods = implode(', ',$pedido['ids_producto']);
+                                                                $prods = explode(',',$pedido['ids_producto']);
                                                                 log_message('error', 'Prods: '.$prods);
                                                                 foreach($prods as $p){
                                                                     log_message('error', 'P: '.$p);
