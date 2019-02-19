@@ -32,7 +32,10 @@ class Pedido extends CI_Controller {
         log_message('error', '--Buscando datos--');
         $falta = '';
         $pedido['id_pedido'] = $this->input->post('id_pedido');
-        $pedido['ids_producto'] = $this->input->post('ids_producto');
+        if($pedido['ids_producto'] = $this->input->post('ids_producto')){
+            $pedido['ids_producto'] = implode(',', $pedido['ids_producto']);
+        }
+        
         if(!$pedido['obrero'] = $this->input->post('obrero'))
             $falta[] = 'Obrero';
         if(!$pedido['cantidad'] = $this->input->post('cantidad'))
