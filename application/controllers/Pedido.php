@@ -14,9 +14,7 @@ class Pedido extends CI_Controller {
         $this->load->view('footer');
     }
     public function agregar_pedido(){
-        log_message('error', '------------Agregar Pedido------------');
         $pedido = $this->verificar_datos();
-        log_message('error', '--Volvio el pedido--');
         if($this->Pedido_model->agregar_pedido($pedido))
             redirect('/pedidos/ok');
         $this->session->set_flashdata('datos_ingresados', $pedido);
@@ -34,7 +32,7 @@ class Pedido extends CI_Controller {
         log_message('error', '--Buscando datos--');
         $falta = '';
         $pedido['id_pedido'] = $this->input->post('id_pedido');
-        $pedido['id_producto'] = $this->input->post('id_producto');
+        $pedido['ids_producto'] = $this->input->post('ids_producto');
         if(!$pedido['obrero'] = $this->input->post('obrero'))
             $falta[] = 'Obrero';
         if(!$pedido['cantidad'] = $this->input->post('cantidad'))

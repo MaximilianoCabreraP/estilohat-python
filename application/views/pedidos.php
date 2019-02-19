@@ -211,7 +211,7 @@
                                                 Obrero: <input class="form-control" name="obrero" placeholder="Obrero que realiza el pedido..." value="<?php if(!empty($datos_ingresados['obrero'])) echo sustituto_tilde($datos_ingresados['obrero']); else echo sustituto_tilde($pedido['obrero']); ?>" required> <br>
                                             <!-- Productos -->
                                                 Productos: 
-                                                <select class="lista_productos" multiple="true" name="id_producto[]">
+                                                <select class="lista_productos" multiple="true" name="ids_producto[]">
                                                     <?php foreach($productos as $producto){ ?>
                                                         <option id="<?php echo $producto['id_producto']; ?>" value="<?php echo $producto['nombre']; ?>"
                                                             <?php 
