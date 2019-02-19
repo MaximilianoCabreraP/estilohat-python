@@ -215,29 +215,16 @@
                                                     <?php foreach($productos as $producto){ ?>
                                                         <option id="<?php echo $producto['id_producto']; ?>" value="<?php echo $producto['nombre']; ?>"
                                                             <?php 
-                                                                $var = 1;
-                                                                if(isset($datos_ingresados) && !empty($datos_ingresados)){ 
-                                                                    foreach($datos_ingresados['producto'] as $p_ingresado){
-                                                                        if($p_ingresado == $producto['id_producto']){
-                                                                            echo 'selected="selected"';
-                                                                            $var = 0;
-                                                                        }else{
-                                                                            echo '';
-                                                                        }
+                                                                $prods = explode(',',$pedido['ids_producto']);
+                                                                foreach($prods as $p){
+                                                                    log_message('error', 'P: '.$p);
+                                                                    if($p == $producto['id_producto']){
+                                                                        echo 'selected="selected"';
+                                                                    }else{
+                                                                        echo '';
                                                                     }
-                                                                }
-                                                                if ($var == 1){
-                                                                    $prods = explode(',',$pedido['ids_producto']);
-                                                                    foreach($prods as $p){
-                                                                        log_message('error', 'P: '.$p);
-                                                                        if($p == $producto['id_producto']){
-                                                                            echo 'selected="selected"';
-                                                                        }else{
-                                                                            echo '';
-                                                                        }
-                                                                    }
-                                                                }
-                                                            } ?>
+                                                                } 
+                                                            ?>
                                                         >
                                                             <?php echo $producto['nombre']; ?>
                                                         </option>
