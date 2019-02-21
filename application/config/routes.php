@@ -22,5 +22,14 @@ $route['interno/(:any)'] = 'interno/getTabla/$1';
         $route['pedidos'] = 'pedido/index';
         $route['pedidos/([a-z]*)'] = 'pedido/index/$1';
 
+//OBREROS
+    #Nuevo
+        $route['obrero/agregar-obrero']['POST'] = 'obrero/agregar_obrero';
+    #Editar
+        $route['obrero/editar'] = 'obrero/editar_obrero';
+    #Listado
+        $route['obreros'] = 'pedido/index';
+        $route['obreros/([a-z]*)'] = 'obrero/index/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
