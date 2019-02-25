@@ -21,6 +21,8 @@ class Pedido extends CI_Controller {
         redirect('/producto/error');
     }
     public function editar_pedido(){
+        #TODO: Cambiar que no haga un update, sino q haga un INSERT con una nueva version
+        # Hacer que primary key sean id_pedido y version
         $pedido = $this->verificar_datos();
         if($this->Pedido_model->editar_pedido($pedido))
             redirect('/pedidos/editado');
