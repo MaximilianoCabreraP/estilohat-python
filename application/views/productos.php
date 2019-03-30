@@ -111,9 +111,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         Descripción: <input class="form-control" type="text" name="descripcion" placeholder="Ingresá la descripción..." <?php if(!empty($datos_ingresados["descripcion"])) echo $datos_ingresados["descripcion"]; ?> required />
-                                        Cantidad: <div class="col-3">
-                                                      <input class="form-control" type="phone" name="cantidad" placeholder="Cantidad..." <?php if(!empty($datos_ingresados["cantidad"])) echo $datos_ingresados["cantidad"]; ?> required />
-                                                  </div>
+                                        Cantidad: <input class="form-control" type="number" min="0" name="cantidad" placeholder="Cantidad..." <?php if(!empty($datos_ingresados["cantidad"])) echo $datos_ingresados["cantidad"]; ?> required />
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +162,7 @@
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                             <!-- duplicar-->
-                                                <a href="" class="btn btn-info btn-rounded btn-sm duplicar" data-id="<?php echo $producto["id_producto"];?>" data-toggle="modal" data-target="#modal_duplicar">
+                                                <a href="" class="btn btn-info btn-rounded btn-sm duplicar" data-id="<?php echo $producto["id_producto"];?>" data-toggle="modal" data-target="#modal_duplicar_<?php echo $producto["id_producto"];?>">
                                                     <i class="far fa-copy"></i>
                                                 </a>
                                             <!-- eliminar -->
@@ -225,7 +223,7 @@
                 </div>
             <!-- Duplicar Producto -->
                 <div class="row d-flex justify-content-center modalWrapper">
-                    <div class="modal fade duplicar" id="modal_duplicar<?php echo $producto["id_producto"];?>" role="dialog" aria-labellydby="modal_duplicar" aria-hidden="true">
+                    <div class="modal fade duplicar" id="modal_duplicar_<?php echo $producto["id_producto"];?>" role="dialog" aria-labellydby="modal_duplicar" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <?php echo form_open("/producto/duplicar"); ?>
@@ -287,7 +285,7 @@
             autoWidth: true,
             stateSave: true,
             pageLength: 50,
-            dom: "<"top" <"float-left" f><"buscador control-form"><"float-right" l> > t <"bottom text-center" ip><"clear">",
+            dom: '<"top" <"float-left" f><"buscador control-form"><"float-right" l> > t <"bottom text-center" ip><"clear">',
             language: {
                 "decimal": "",
                 "emptyTable": "No hay información",
