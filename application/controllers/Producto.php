@@ -10,7 +10,7 @@ class Producto extends CI_Controller {
         $boton_add = '<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapse0" aria-expanded="false" aria-controls="collapse0"><i class="fa fa-plus-circle" aria-hidden="true"></i>Ingresar Producto</button>';
 
         $this->load->view("header", ["title" => "Estilo Hat | Productos"]);
-        $this->load->view('cabecera', ['titulo' => 'Listado de Productos', 
+        $this->load->view('cabecera', ['titulo' => 'Productos', 
                                        'boton_add' => $boton_add]);
         $this->load->view("productos", ["productos" => $productos, 
                                         "msg" => $msg, 
