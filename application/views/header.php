@@ -16,5 +16,10 @@
 <body>
 	<header class="header">
 		<div class="row no-gutters">
+			<div class="col-12 text-center align-self-center">
+				<a href="/" class="logo">
+					<img src="http://estilohat.com/images/banner-hat.jpg" alt="Estilo Hat" width="160"/>
+				</a>
+			</div>
 		</div>
 	</header>
