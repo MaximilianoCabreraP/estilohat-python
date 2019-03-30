@@ -5,11 +5,11 @@ class Pedido extends CI_Controller {
     public function index($msg = ""){
         $pedidos = $this->Pedido_model->buscar_pedidos();
         $productos = $this->Producto_model->buscar_productos();
-        $falta_dato = $this->session->flashdata('falta_dato');
+        $falta = $this->session->flashdata('falta');
         $this->load->view('header', ['title' => 'Estilo Hat | Pedidos']);
         $this->load->view('pedidos', ['pedidos' => $pedidos,
                                       'productos' => $productos,
-                                      'falta_dato' => $falta_dato,
+                                      'falta' => $falta,
                                       'msg' => $msg]);
         $this->load->view('footer');
     }
@@ -31,24 +31,24 @@ class Pedido extends CI_Controller {
     }
     public function verificar_datos(){
         log_message('error', '--Buscando datos--');
-        $falta_dato = '';
+        $falta = '';
         $pedido['id_pedido'] = $this->input->post('id_pedido');
         if($pedido['ids_producto'] = $this->input->post('ids_producto')){
             $pedido['ids_producto'] = implode(',', $pedido['ids_producto']);
         }
         
         if(!$pedido['obrero'] = $this->input->post('obrero'))
-            $falta_dato[] = 'Obrero';
+            $falta[] = 'Obrero';
         if(!$pedido['cantidad'] = $this->input->post('cantidad'))
-            $falta_dato[] = 'Cantidad';
+            $falta[] = 'Cantidad';
 
-        if(!empty($falta_dato)){
-            log_message('error', '-falta_daton Datos-');
-            foreach($falta_dato as $k=>$v){
+        if(!empty($falta)){
+            log_message('error', '-faltan Datos-');
+            foreach($falta as $k=>$v){
                 log_message('error', $k.': '.$v);
             }
             $this->session->set_flashdata('datos_ingresados', $pedido);
-            $this->session->set_flashdata('falta_dato', $falta_dato);
+            $this->session->set_flashdata('falta', $falta);
             redirect('/pedidos');
         }
         log_message('error', '-Datos ok-');

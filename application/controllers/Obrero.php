@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Obrero extends CI_Controller {
     public function index($msg = ''){
         $obreros = $this->Obrero_model->buscar_obrero();
-        $falta_dato = $this->session->flashdata('falta_dato');
+        $falta = $this->session->flashdata('falta');
         $datos_ingresados = $this->session->flashdata('datos_ingresados');
         
         $this->load->view('header', ['title' => 'Estilo Hat | Obreros']);
         $this->load->view('pedidos', ['obreros' => $obreros,
-                                      'falta_dato' => $falta_dato,
+                                      'falta' => $falta,
                                       'datos_ingresados' => $datos_ingresados,
                                       'msg' => $msg]);
         $this->load->view('footer');
