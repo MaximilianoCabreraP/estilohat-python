@@ -167,7 +167,7 @@
                                                 </a>
                                             <!-- eliminar -->
                                                 <?php //if($this->session->type === "admin"){ ?>
-                                                    <a href="/Producto/eliminar/<?php echo $producto["id_producto"]; ?>" onclick="return eliminar(JSON.stringify(<?php echo $producto['nombre']; ?>))" class="btn btn-info btn-rounded btn-sm">
+                                                    <a href="/Producto/eliminar/<?php echo $producto["id_producto"]; ?>" onclick="return eliminar(JSON.stringify('<?php echo $producto['nombre']; ?>'))" class="btn btn-info btn-rounded btn-sm">
                                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                                     </a>
                                                 <?php //} ?>
