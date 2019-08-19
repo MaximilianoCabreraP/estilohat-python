@@ -3,19 +3,21 @@ defined("BASEPATH") OR exit("No direct script access allowed");
 
 class Producto extends CI_Controller {
     public function index($msg = ""){
-        $falta = $this->session->flashdata("falta");
-        $datos_ingresados = $this->session->flashdata("datos_ingresados");
+        log_message("error", "----Productos----");
         $productos = $this->Producto_model->buscar_productos();
-
+        foreach($productos as $producto){
+            foreach($producto as $k=>$v){
+                log_message("error", "$k: $v");
+            }
+        }
         $boton_add = '<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapse0" aria-expanded="false" aria-controls="collapse0"><i class="fa fa-plus-circle" aria-hidden="true"></i>Ingresar Producto</button>';
-
         $this->load->view("header", ["title" => "Estilo Hat | Productos"]);
         $this->load->view('cabecera', ['titulo' => 'Productos', 
                                        'boton_add' => $boton_add]);
         $this->load->view("productos", ["productos" => $productos, 
                                         "msg" => $msg, 
-                                        "datos_ingresados" => $datos_ingresados, 
-                                        "falta" => $falta]);
+                                        "datos_ingresados" => $this->session->flashdata("datos_ingresados"), 
+                                        "falta" => $this->session->flashdata("falta")]);
         $this->load->view("footer");
     }
     public function agregar(){
