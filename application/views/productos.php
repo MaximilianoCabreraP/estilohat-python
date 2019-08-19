@@ -198,7 +198,7 @@
                                                     <option <?php if($datos_ingresados["tipo"] == 3 || $producto["tipo"] == 3) echo "selected";?> value="3">Accesorio</option>
                                                 </select><br>
                                         <!-- Cantidad -->
-                                            Cantidad: <input class="form-control" type="number" name="cantidad" min="0" value="<?php echo !empty($datos_ingresados["cantidad"])?$datos_ingresados["cantidad"]:$producto["cantidad"]; ?>"><br>
+                                            Cantidad: <input class="form-control" type="number" name="cantidad" min="0" value="<?php if(!empty($datos_ingresados["cantidad"])) echo $datos_ingresados["cantidad"]; else echo $producto["cantidad"]; ?>"><br>
                                     </div>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center buttonEditFormWrapper">
