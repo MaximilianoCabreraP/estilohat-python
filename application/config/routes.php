@@ -32,5 +32,12 @@ $route["interno/(:any)"] = "interno/getTabla/$1";
         $route["obreros"] = "pedido/index";
         $route["obreros/([a-z]*)"] = "obrero/index/$1";
 
+//SSKOTZ
+    $route["sskotz/caballeros"] = "caballero/index";
+    $route["sskotz/caballero/([0-9]*)"] = "caballero/caballero/$1";
+    $route["sskotz/nuevo-caballero"] = "caballero/nuevo";
+    $route["sskotz/nuevo-caballero/([a-z]*)"] = "caballero/nuevo/$1";
+    $route["sskotz/agregar-caballero"] = "caballero/agregar_caballero";
+
 $route["404_override"] = "";
 $route["translate_uri_dashes"] = FALSE;
