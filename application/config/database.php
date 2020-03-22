@@ -28,9 +28,9 @@ $db['default'] = array(
 
 $db['sskotz'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'estilohat',
-	'password' => 'V87txSzuyLDzcfH8NGx8YL9T',
+	'hostname' => 'http://104.248.61.86/',
+	'username' => 'meme',
+	'password' => 'wQa3cdL4SMqZaCC7aXFGFLmu5G',
 	'database' => 'saintseiyakotz',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
