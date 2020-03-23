@@ -4,7 +4,7 @@ class Caballero extends CI_Controller{
 	public function index($msg=""){
         log_message("error", "-----Listado Caballero-----");
         $this->load->view("sskotz/header");
-        $this->load->view("sskotz/listado_caballero", ["caballeros" => $this->Caballero_model->buscar_caballeros(), "msg" => $msg]);
+        $this->load->view("sskotz/listado_caballeros", ["caballeros" => $this->Caballero_model->buscar_caballeros(), "msg" => $msg]);
         $this->load->view("sskotz/footer");
 	}/*
 	public function nuevo($msg=""){
