@@ -17,7 +17,7 @@
         <div class="row cabecera-panel">
             <div class="col-6"><h1 class="titulo-panel">Caballeros</h1></div>
             <div class="col-6 text-right">
-                <a href="/sskotz/ingresar_caballero"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ingresar Caballero</a>
+                <a href="/sskotz/nuevo-caballero"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ingresar Caballero</a>
             </div>
         </div>
 
