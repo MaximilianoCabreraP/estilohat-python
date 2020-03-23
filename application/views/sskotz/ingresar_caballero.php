@@ -14,7 +14,7 @@
                 <div class="col-sm-5">
                     <div class="porta-input">
                         <label class="label-control-2">*Nombre</label><br>
-                        <input id="nombre" class="input-control-2" type="text" name="nombre" value="<?php echo $caballero["nombre"]; ?>"/>
+                        <input id="nombre" class="input-control-2" type="text" name="nombre" value="<?php echo !empty($caballero["nombre"])?$caballero["nombre"]:""; ?>"/>
                     </div>
                     <div class="porta-input">
                         <label class="label-control-2">*Rango</label><br>
@@ -31,7 +31,7 @@
                 <div class="col-sm-5">
                     <div class="porta-input">
                         <label class="label-control-2">Uso <button type="button" class="btn-ayuda" data-container="body" data-toggle="popover" data-placement="top" data-content="Indicá que uso va a tener este caballero: Curador, Soporte, Atacante, etc."><i class="fas fa-question-circle"></i></button></label>
-                        <input class="input-control-2" type="text" name="uso" value="<?php echo $caballero["uso"]; ?>" />
+                        <input class="input-control-2" type="text" name="uso" value="<?php echo !empty($caballero["uso"])?$caballero["uso"]:""; ?>" />
                     </div>
                 </div>
             </div>
