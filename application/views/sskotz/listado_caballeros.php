@@ -17,7 +17,7 @@
         <div class="row cabecera-panel">
             <div class="col-6"><h1 class="titulo-panel">Caballeros</h1></div>
             <div class="col-6 text-right">
-                <a href="sskotz/ingresar_caballero"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ingresar Caballero</a>
+                <a href="/sskotz/ingresar_caballero"><i class="fa fa-plus-circle" aria-hidden="true"></i> Ingresar Caballero</a>
             </div>
         </div>
 
@@ -34,7 +34,7 @@
                         if(count($caballeros) > 0){
                             foreach($caballeros as $caballero){ ?>
                                 <tr>
-                                    <td><a href="sskotz/caballero/<?php echo $caballero["id"]; ?>" class="link-texto"><?php echo $caballero["nombre"] ?></a></td>
+                                    <td><a href="/sskotz/caballero/<?php echo $caballero["id"]; ?>" class="link-texto"><?php echo $caballero["nombre"] ?></a></td>
                                     <td><?php echo $caballero["rango"]; ?></td>
                                     <td><?php echo $caballero["utilidad"]; ?></td>
                                     <td><?php echo $caballero["uso"]; ?></td>
