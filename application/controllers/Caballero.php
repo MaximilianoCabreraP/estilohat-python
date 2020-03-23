@@ -15,12 +15,7 @@ class Caballero extends CI_Controller{
     }
     public function agregar_caballero(){
         log_message("error", "------------Agregar Caballero------------");
-        $data = array(
-            "nombre" => $this->input->post(),
-            "rango" => $this->input->post(),
-            "uso" => $this->input->post()
-        );
-        log_message("error", "Data: ".print_r($data, true));
+        $data = $this->input->post();
         $this->load->view("json", ["data" => $data]);
     }
 }

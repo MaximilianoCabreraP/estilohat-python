@@ -19,11 +19,11 @@
                     <div class="porta-input">
                         <label class="label-control-2">*Rango</label><br>
                         <select class="input-control-2" id="rango" name="rango" required>
-                            <option id="0" value="" selected disable>Seleccioná un rango</option>
-                            <option id="1" value="SS"></option>
-                            <option id="2" value="S"></option>
-                            <option id="3" value="A"></option>
-                            <option id="4" value="B"></option>
+                            <option value="" selected disable>Seleccioná un rango</option>
+                            <option value="SS">SS</option>
+                            <option value="S">S</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
                         </select>
                     </div>
                 </div>
