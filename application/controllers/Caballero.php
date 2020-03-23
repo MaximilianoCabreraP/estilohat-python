@@ -6,7 +6,7 @@ class Caballero extends CI_Controller{
         $this->load->view("sskotz/header");
         $this->load->view("sskotz/listado_caballero", ["caballeros" => $this->Caballero_model->buscar_caballeros(), "msg" => $msg]);
         $this->load->view("sskotz/footer");
-	}
+	}/*
 	public function nuevo($msg=""){
         log_message("error", "-----Nuevo Caballero-----");
         $this->load->view("sskotz/header");
@@ -22,5 +22,5 @@ class Caballero extends CI_Controller{
         );
         log_message("error", "Data: ".print_r($data, true));
         $this->load->view("json", ["data" => $data]);
-    }
+    }*/
 }
