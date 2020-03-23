@@ -9,7 +9,7 @@ class Caballero extends CI_Controller{
 	}
 	public function nuevo($msg=""){
         log_message("error", "-----Nuevo Caballero-----");
-        $this->load->view("sskotz/header");
+        $this->load->view("sskotz/header", ["title" => "Nuevo Caballero"]);
         $this->load->view("sskotz/ingresar_caballero");
         $this->load->view("sskotz/footer");
     }
