@@ -1,7 +1,7 @@
 <?php
     class Caballero_model extends CI_Model{
         function __construct(){
-            $this->dbss = $this->load->database("sskotz",TRUE);
+            //$this->dbss = $this->load->database("sskotz",TRUE);
 
             date_default_timezone_set("America/Argentina/Buenos_Aires");
         }
