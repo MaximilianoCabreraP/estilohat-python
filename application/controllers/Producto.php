@@ -12,7 +12,7 @@ class Producto extends CI_Controller {
         $this->load->view("header", ["title" => "Estilo Hat | Productos"]);
         $this->load->view('cabecera', ['titulo' => 'Productos', 
                                        'boton_add' => $boton_add]);
-        $this->load->view("producto/listado", ["productos" => $productos, 
+        $this->load->view("productos/listado", ["productos" => $productos, 
                                                "msg" => $msg, 
                                                "datos_ingresados" => $datos_ingresados, 
                                                "falta" => $falta]);
