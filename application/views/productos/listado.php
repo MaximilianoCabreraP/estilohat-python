@@ -210,13 +210,13 @@
                                             Estado: <select class="form-control" name="estado">
                                                         <option selected disabled>Selecciona un estado</option>
                                                         <option value="Nuevo" <?php echo in_array("Nuevo",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Nuevo</option>
-                                                        <option value="Gastado" <?php echo $datos_ingresados["estado"]=="Gastado"?"selected":"";?>>Gastado</option>
-                                                        <option value="Renovar" <?php echo $datos_ingresados["estado"]=="Renovar"?"selected":"";?>>Renovar</option>
-                                                        <option value="Repuesto" <?php echo $datos_ingresados["estado"]=="Repuesto"?"selected":"";?>>Repuesto</option>
-                                                        <option value="Roto" <?php echo $datos_ingresados["estado"]=="Roto"?"selected":"";?>>Roto</option>
-                                                        <option value="Entero" <?php echo $datos_ingresados["estado"]=="Entero"?"selected":"";?>>Entero</option>
-                                                        <option value="Medio" <?php echo $datos_ingresados["estado"]=="Medio"?"selected":"";?>>Medio</option>
-                                                        <option value="Vacio" <?php echo $datos_ingresados["estado"]=="Vacio"?"selected":"";?>>Vacio</option>
+                                                        <option value="Gastado" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Gastado</option>
+                                                        <option value="Renovar" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Renovar</option>
+                                                        <option value="Repuesto" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Repuesto</option>
+                                                        <option value="Roto" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Roto</option>
+                                                        <option value="Entero" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Entero</option>
+                                                        <option value="Medio" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Medio</option>
+                                                        <option value="Vacio" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Vacio</option>
                                                     </select>
                                     </div>
                                 </div>
