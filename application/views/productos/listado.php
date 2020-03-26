@@ -119,7 +119,7 @@
             <thead>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Cantidad</th>
+                <th>Marca</th>
                 <th>Tipo</th>
                 <th>Acciones</th>
             </thead>
@@ -132,8 +132,8 @@
                                     <td><?php echo $producto["id_producto"]; ?></td>
                                 <!-- Nombre -->
                                     <td><a href=""class="link-texto" data-toggle="modal" data-target="#modal_editar<?php echo $producto["id_producto"]; ?>"><?php echo sustituto_tilde($producto["nombre"]); ?></a></td>
-                                <!-- Cantidad -->
-                                    <td><?php echo $producto["cantidad"]; ?></td>
+                                <!-- Marca -->
+                                    <td><?php echo $producto["marca"]; ?></td>
                                 <!-- Tipo -->
                                     <td>
                                         <?php
@@ -188,6 +188,8 @@
                                             <input class="form-control" name="id_producto" value="<?php echo $producto["id_producto"]; ?>" hidden>
                                         <!-- Nombre -->
                                             Nombre: <input class="form-control" name="nombre" placeholder="Titulo..." value="<?php if(!empty($datos_ingresados["nombre"])) echo sustituto_tilde($datos_ingresados["nombre"]); else echo sustituto_tilde($producto["nombre"]); ?>" required> <br>
+                                        <!-- Marca -->
+                                            Marca: <input class="form-control" name="marca" placeholder="Marca..." value="<?php if(!empty($datos_ingresados["marca"])) echo sustituto_tilde($datos_ingresados["marca"]); else echo sustituto_tilde($producto["marca"]); ?>" required> <br>
                                         <!-- Descripcion -->
                                             Descripcion: <input class="form-control" name="descripcion" value="<?php if(!empty($datos_ingresados["descripcion"]))echo sustituto_tilde($datos_ingresados["descripcion"]); else echo sustituto_tilde($producto["descripcion"]); ?>" required> <br>
                                         <!-- Tipo -->
@@ -198,8 +200,8 @@
                                                     <option <?php if($datos_ingresados["tipo"] == 2 || $producto["tipo"] == 2) echo "selected";?> value="2">Material</option>
                                                     <option <?php if($datos_ingresados["tipo"] == 3 || $producto["tipo"] == 3) echo "selected";?> value="3">Accesorio</option>
                                                 </select><br>
-                                        <!-- Cantidad -->
-                                            Cantidad: <input class="form-control" type="number" name="cantidad" min="0" value="<?php if(!empty($datos_ingresados["cantidad"])) echo $datos_ingresados["cantidad"]; else echo $producto["cantidad"]; ?>"><br>
+                                        <!-- Estado -->
+                                            Estado: <input class="form-control" type="number" name="estado" min="0" value="<?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; else echo $producto["estado"]; ?>"><br>
                                     </div>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center buttonEditFormWrapper">
