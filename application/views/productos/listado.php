@@ -96,7 +96,7 @@
                                                 <option value="2" <?php if($datos_ingresados["tipo"] == "2") echo "selected"; ?>>Material</option>
                                                 <option value="3" <?php if($datos_ingresados["tipo"] == "3") echo "selected"; ?>>Accesorio</option>
                                             </select>
-                                    Estado: <input class="form-control" type="number" min="0" name="estado" placeholder="Estado" <?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; ?> required />
+                                    Estado: <input class="form-control" type="text" name="estado" placeholder="Estado" <?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; ?> required />
                                 </div>
                                 <div class="col-sm-6">
                                     Descripción: <input class="form-control" type="text" name="descripcion" placeholder="Ingresá la descripción..." <?php if(!empty($datos_ingresados["descripcion"])) echo $datos_ingresados["descripcion"]; ?> required />
@@ -201,7 +201,7 @@
                                                     <option <?php if($datos_ingresados["tipo"] == 3 || $producto["tipo"] == 3) echo "selected";?> value="3">Accesorio</option>
                                                 </select><br>
                                         <!-- Estado -->
-                                            Estado: <input class="form-control" type="number" name="estado" min="0" value="<?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; else echo $producto["estado"]; ?>"><br>
+                                            Estado: <input class="form-control" type="text" name="estado" value="<?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; else echo $producto["estado"]; ?>"><br>
                                     </div>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center buttonEditFormWrapper">
