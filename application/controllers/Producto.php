@@ -13,35 +13,38 @@ class Producto extends CI_Controller {
         $this->load->view('cabecera', ['titulo' => 'Productos', 
                                        'boton_add' => $boton_add]);
         $this->load->view("productos/listado", ["productos" => $productos, 
-                                               "msg" => $msg, 
+                                               "msg" => $msg,
+                                               "msj" => $this->session->flashdata("msj"),
                                                "datos_ingresados" => $datos_ingresados, 
                                                "falta" => $falta]);
         $this->load->view("footer");
     }
     public function agregar(){
         $producto = $this->verificar_datos();
-        if($this->Producto_model->agregar($producto))
+        if($this->Producto_model->agregar($producto)){
+            $this->session->set_flashdata("msj", "El producto se agregó correctamente.");
             redirect("/productos/ok");
+        }
         $this->session->set_flashdata("datos_ingresados", $producto);
+        $this->session->set_flashdata("msj", "No se pudo agregar el producto, volvé a intentarlo.");
         redirect("/productos/error");
     }
     public function editar(){
         $producto = $this->verificar_datos();
-        if($this->Producto_model->editar($producto))
-            redirect("/productos/editado");
-        $this->session->set_flashdata("datos_ingresados", $producto);
-        redirect("/productos/error");
-    }
-    public function duplicar(){
-        $producto = $this->verificar_datos();
-        if($this->Producto_model->agregar($producto))
+        if($this->Producto_model->editar($producto)){
+            $this->session->set_flashdata("msj", "El producto $producto[nombre] se actualizó correctamente.");
             redirect("/productos/ok");
+        }
         $this->session->set_flashdata("datos_ingresados", $producto);
+        $this->session->set_flashdata("msj", "No se pudo actualizar el producto $producto[nombre], volvé a intentarlo.");
         redirect("/productos/error");
     }
     public function eliminar($id){
-        if($this->Producto_model->eliminar($id))
-            redirect("/productos/eliminado");
+        if($this->Producto_model->eliminar($id)){
+            $this->session->set_flashdata("msj", "El producto se eliminó correctamente.");
+            redirect("/productos/ok");
+        }
+        $this->session->set_flashdata("msj", "No se pudo eliminar el producto, volvé a intentarlo.");
         redirect("/productos/error");
     }
     public function verificar_datos(){
@@ -70,7 +73,7 @@ class Producto extends CI_Controller {
         if(!empty($falta)){
             $this->session->set_flashdata("datos_ingresados", $producto);
             $this->session->set_flashdata("falta", $falta);
-            redirect("/productos");
+            redirect("/productos/error");
         }
         return $producto;
     }

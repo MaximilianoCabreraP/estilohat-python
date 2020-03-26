@@ -1,4 +1,24 @@
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
 <style>
+    .table-striped tbody tr:nth-of-type(2n+1) {
+        background-color: #F2FAFD!important;
+    }
+    .buscador{
+        float: left;
+        padding-left: 10px;
+    }
+    #estado{
+        display: inline-block;
+        width: 60%;
+    }
+    #tabla_productos td,
+    #tabla_productos th{
+        font-size: 14px;
+    }
 	#heading0{
 		background-color:lightblue;
 	}
@@ -19,66 +39,44 @@
         return $nombre;
     }
 ?>
-<!-- Msj Error / OK / Vacio -->
-    <?php
-        if ($msg!=null) {
-            if ($msg=="ok") {
-                echo    "<div class='alert alert-success text-center' role='alert'>
-                            El producto fue ingresado correctamente.
-                        </div>";
-            }else if($msg=="editado"){
-                echo    "<div class='alert alert-success text-center' role='alert'>
-                            El producto fue editado correctamente.
-                        </div>";
-            }else if($msg=="eliminado"){
-                echo    "<div class='alert alert-success text-center' role='alert'>
-                            El producto se elimino correctamente.
-                        </div>";
-            }else if($msg=="error"){
-                echo    "<div class='alert alert-danger text-center' role='alert'>
-                            No se pudo realizar la accion, volvé a intentarlo.
-                        </div>";
-            }else if($msg=="vacio"){
-                echo    "<div class='alert alert-danger text-center' role='alert'>
-                            Se deben completar todos los campos que contengan un *.
-                        </div>";
-            }
-        }if($falta!=null){
-            $msj = "<div class='alert alert-danger text-center' role='alert'>
-                        Faltan los siguientes datos: ";
-                        $val = 0;
-                        $mensaje = "";
-                        foreach ($falta as $e){
-                            if($val != 0){
-                                if($e == "Obrero"){
-                                    $mensaje .= "Obrero";
-                                }elseif($e == "Fecha Pedido"){
-                                    if($mensaje != "")
-                                        $mensaje .= " | ";
-                                    $mensaje .= "Fecha Pedido";
-                                }elseif($e == "Estado"){
-                                    if($mensaje != "")
-                                        $mensaje .= " | ";
-                                    $mensaje .= "Estado";
-                                }elseif($e == "Cantidad"){
-                                    if($mensaje != "")
-                                        $mensaje .= " | ";
-                                    $mensaje .= "Cantidad";
-                                }else{
-                                    if($mensaje != "")
-                                        $mensaje .= " | ";
-                                    $mensaje .= $e;
-                                }
-                                echo $mensaje;
-                            }else{
-                                echo "".$e;
-                                $val = 1;
-                            }
-                        }
-                        $msj .= "</div>";
-            echo $msj;
+<!-- Mensaje --><?php
+    if(!empty($msj)){
+        if($msg=="ok") echo "<div class='alert alert-success text-center' role='alert'>$msj</div>";
+        elseif($msg=="error") echo "<div class='alert alert-danger text-center' role='alert'>$msj</div>";
+    }
+    /*if ($msg!=null) {
+        if ($msg=="ok") {
+            echo    "<div class='alert alert-success text-center' role='alert'>
+                        El producto fue ingresado correctamente.
+                    </div>";
+        }else if($msg=="editado"){
+            echo    "<div class='alert alert-success text-center' role='alert'>
+                        El producto fue editado correctamente.
+                    </div>";
+        }else if($msg=="eliminado"){
+            echo    "<div class='alert alert-success text-center' role='alert'>
+                        El producto se elimino correctamente.
+                    </div>";
+        }else if($msg=="error"){
+            echo    "<div class='alert alert-danger text-center' role='alert'>
+                        No se pudo realizar la accion, volvé a intentarlo.
+                    </div>";
+        }else if($msg=="vacio"){
+            echo    "<div class='alert alert-danger text-center' role='alert'>
+                        Se deben completar todos los campos que contengan un *.
+                    </div>";
         }
-    ?>
+    }*/
+    if($falta!=null){
+        $mensaje = "";
+        foreach($falta as $e){
+            $mensaje .= $mensaje!=""?" | ":"";
+            $mensaje .= $e;
+        }
+        echo "<div class='alert alert-danger text-center' role'alert'>Faltan los siguientes datos: $mensaje</div>";
+    } ?>
+<!-- Fin Mensaje --> 
+
 <!-- Nuevo Producto -->
     <div class="accordion" id="accordion">
         <div class="card card-header">
@@ -210,13 +208,13 @@
                                             Estado: <select class="form-control" name="estado">
                                                         <option selected disabled>Selecciona un estado</option>
                                                         <option value="Nuevo" <?php echo in_array("Nuevo",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Nuevo</option>
-                                                        <option value="Gastado" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Gastado</option>
-                                                        <option value="Renovar" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Renovar</option>
-                                                        <option value="Repuesto" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Repuesto</option>
-                                                        <option value="Roto" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Roto</option>
-                                                        <option value="Entero" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Entero</option>
-                                                        <option value="Medio" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Medio</option>
-                                                        <option value="Vacio" <?php echo in_array("estado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Vacio</option>
+                                                        <option value="Gastado" <?php echo in_array("Gastado",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Gastado</option>
+                                                        <option value="Renovar" <?php echo in_array("Renovar",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Renovar</option>
+                                                        <option value="Repuesto" <?php echo in_array("Repuesto",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Repuesto</option>
+                                                        <option value="Roto" <?php echo in_array("Roto",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Roto</option>
+                                                        <option value="Entero" <?php echo in_array("Entero",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Entero</option>
+                                                        <option value="Medio" <?php echo in_array("Medio",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Medio</option>
+                                                        <option value="Vacio" <?php echo in_array("Vacio",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Vacio</option>
                                                     </select>
                                     </div>
                                 </div>
