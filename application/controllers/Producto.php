@@ -62,8 +62,9 @@ class Producto extends CI_Controller {
             "id_producto" => $id_producto,
             "nombre" => $nombre,
             "descripcion" => $descripcion,
+            "marca" => $marca,
             "tipo" => $tipo,
-            "cantidad" => $cantidad
+            "estado" => $estado
         );
 
         if(!empty($falta)){

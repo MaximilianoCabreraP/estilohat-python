@@ -96,7 +96,7 @@
                                                 <option value="2" <?php if($datos_ingresados["tipo"] == "2") echo "selected"; ?>>Material</option>
                                                 <option value="3" <?php if($datos_ingresados["tipo"] == "3") echo "selected"; ?>>Accesorio</option>
                                             </select>
-                                    Estado: <input class="form-control" type="text" name="estado" placeholder="Estado" <?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; ?> required />
+                                    Estado: <input class="form-control" type="text" name="estado" placeholder="Estado" <?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; ?> />
                                 </div>
                                 <div class="col-sm-6">
                                     Descripción: <input class="form-control" type="text" name="descripcion" placeholder="Ingresá la descripción..." <?php if(!empty($datos_ingresados["descripcion"])) echo $datos_ingresados["descripcion"]; ?> required />
