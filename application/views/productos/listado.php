@@ -96,7 +96,17 @@
                                                 <option value="2" <?php if($datos_ingresados["tipo"] == "2") echo "selected"; ?>>Material</option>
                                                 <option value="3" <?php if($datos_ingresados["tipo"] == "3") echo "selected"; ?>>Accesorio</option>
                                             </select>
-                                    Estado: <input class="form-control" type="text" name="estado" placeholder="Estado" <?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; ?> />
+                                    Estado: <select class="form-control" name="estado">
+                                                <option selected disabled>Selecciona un estado</option>
+                                                <option value="Nuevo" <?php echo $datos_ingresados["estado"]=="Nuevo"?"selected":"";?>>Nuevo</option>
+												<option value="Gastado" <?php echo $datos_ingresados["estado"]=="Gastado"?"selected":"";?>>Gastado</option>
+												<option value="Renovar" <?php echo $datos_ingresados["estado"]=="Renovar"?"selected":"";?>>Renovar</option>
+												<option value="Repuesto" <?php echo $datos_ingresados["estado"]=="Repuesto"?"selected":"";?>>Repuesto</option>
+												<option value="Roto" <?php echo $datos_ingresados["estado"]=="Roto"?"selected":"";?>>Roto</option>
+												<option value="Entero" <?php echo $datos_ingresados["estado"]=="Entero"?"selected":"";?>>Entero</option>
+												<option value="Medio" <?php echo $datos_ingresados["estado"]=="Medio"?"selected":"";?>>Medio</option>
+												<option value="Vacio" <?php echo $datos_ingresados["estado"]=="Vacio"?"selected":"";?>>Vacio</option>
+                                            </select>
                                 </div>
                                 <div class="col-sm-6">
                                     Descripción: <input class="form-control" type="text" name="descripcion" placeholder="Ingresá la descripción..." <?php if(!empty($datos_ingresados["descripcion"])) echo $datos_ingresados["descripcion"]; ?> required />
@@ -150,10 +160,10 @@
                                             <a href="" class="btn btn-info btn-rounded btn-sm editar" data-toggle="modal" data-target="#modal_editar<?php echo $producto["id_producto"]; ?>">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                        <!-- duplicar-->
+                                        <!-- duplicar--><?php/*
                                             <a href="" class="btn btn-info btn-rounded btn-sm duplicar" data-id="<?php echo $producto["id_producto"];?>" data-toggle="modal" data-target="#modal_duplicar_<?php echo $producto["id_producto"];?>">
                                                 <i class="far fa-copy"></i>
-                                            </a>
+                                            </a> */ ?>
                                         <!-- eliminar -->
                                             <?php //if($this->session->type === "admin"){ ?>
                                                 <a href="/Producto/eliminar/<?php echo $producto["id_producto"]; ?>" onclick="return eliminar(JSON.stringify('<?php echo $producto['nombre']; ?>'))" class="btn btn-info btn-rounded btn-sm">
@@ -201,7 +211,17 @@
                                                     <option <?php if($datos_ingresados["tipo"] == 3 || $producto["tipo"] == 3) echo "selected";?> value="3">Accesorio</option>
                                                 </select><br>
                                         <!-- Estado -->
-                                            Estado: <input class="form-control" type="text" name="estado" value="<?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; else echo $producto["estado"]; ?>"><br>
+                                            Estado: <select class="form-control" name="estado">
+                                                        <option selected disabled>Selecciona un estado</option>
+                                                        <option value="Nuevo" <?php echo $datos_ingresados["estado"]=="Nuevo"?"selected":"";?>>Nuevo</option>
+                                                        <option value="Gastado" <?php echo $datos_ingresados["estado"]=="Gastado"?"selected":"";?>>Gastado</option>
+                                                        <option value="Renovar" <?php echo $datos_ingresados["estado"]=="Renovar"?"selected":"";?>>Renovar</option>
+                                                        <option value="Repuesto" <?php echo $datos_ingresados["estado"]=="Repuesto"?"selected":"";?>>Repuesto</option>
+                                                        <option value="Roto" <?php echo $datos_ingresados["estado"]=="Roto"?"selected":"";?>>Roto</option>
+                                                        <option value="Entero" <?php echo $datos_ingresados["estado"]=="Entero"?"selected":"";?>>Entero</option>
+                                                        <option value="Medio" <?php echo $datos_ingresados["estado"]=="Medio"?"selected":"";?>>Medio</option>
+                                                        <option value="Vacio" <?php echo $datos_ingresados["estado"]=="Vacio"?"selected":"";?>>Vacio</option>
+                                                    </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center buttonEditFormWrapper">
@@ -212,7 +232,7 @@
                     </div>
                 </div>
             </div>
-        <!-- Duplicar Producto -->
+        <!-- Duplicar Producto --><?php /*
             <div class="row d-flex justify-content-center modalWrapper">
                 <div class="modal fade duplicar" id="modal_duplicar_<?php echo $producto["id_producto"];?>" role="dialog" aria-labellydby="modal_duplicar" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -261,7 +281,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */ ?>
     <?php } ?>
 </div>
 
