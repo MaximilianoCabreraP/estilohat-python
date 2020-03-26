@@ -96,10 +96,11 @@
                                                 <option value="2" <?php if($datos_ingresados["tipo"] == "2") echo "selected"; ?>>Material</option>
                                                 <option value="3" <?php if($datos_ingresados["tipo"] == "3") echo "selected"; ?>>Accesorio</option>
                                             </select>
+                                    Estado: <input class="form-control" type="number" min="0" name="estado" placeholder="Estado" <?php if(!empty($datos_ingresados["estado"])) echo $datos_ingresados["estado"]; ?> required />
                                 </div>
                                 <div class="col-sm-6">
                                     Descripción: <input class="form-control" type="text" name="descripcion" placeholder="Ingresá la descripción..." <?php if(!empty($datos_ingresados["descripcion"])) echo $datos_ingresados["descripcion"]; ?> required />
-                                    Cantidad: <input class="form-control" type="number" min="0" name="cantidad" placeholder="Cantidad..." <?php if(!empty($datos_ingresados["cantidad"])) echo $datos_ingresados["cantidad"]; ?> required />
+                                    Marca: <input class="form-control" type="text" name="marca" placeholder="Ingresá la marca..." value="<?php if(!empty($datos_ingresados["marca"])) echo $datos_ingresados["marca"]; ?>" required />
                                 </div>
                             </div>
                         </div>

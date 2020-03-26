@@ -8,7 +8,6 @@ class Producto_model extends CI_Model{
         return $this->db->get("producto")->result_array();
     }
     public function agregar($producto){
-        $producto["fecha_ingreso"] = date("Y-m-d - H:i:s");
         $this->db->insert("producto", $producto);
         return $this->db->affected_rows()>0;
     }

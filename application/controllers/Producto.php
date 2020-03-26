@@ -12,10 +12,10 @@ class Producto extends CI_Controller {
         $this->load->view("header", ["title" => "Estilo Hat | Productos"]);
         $this->load->view('cabecera', ['titulo' => 'Productos', 
                                        'boton_add' => $boton_add]);
-        $this->load->view("productos", ["productos" => $productos, 
-                                        "msg" => $msg, 
-                                        "datos_ingresados" => $datos_ingresados, 
-                                        "falta" => $falta]);
+        $this->load->view("producto/listado", ["productos" => $productos, 
+                                               "msg" => $msg, 
+                                               "datos_ingresados" => $datos_ingresados, 
+                                               "falta" => $falta]);
         $this->load->view("footer");
     }
     public function agregar(){
@@ -51,10 +51,12 @@ class Producto extends CI_Controller {
             $falta[] = "Nombre";
         if(!$descripcion = $this->input->post("descripcion"))
             $falta[] = "Descripcion";
+        if(!$marca = $this->input->post("marca"))
+            $falta[] = "Marca";
         if(!$tipo = $this->input->post("tipo"))
             $falta[] = "Tipo";
-        if(!$cantidad = $this->input->post("cantidad"))
-            $falta[] = "Cantidad";
+        if(!$estado = $this->input->post("estado"))
+            $falta[] = "Estado";
 
         $producto = array(
             "id_producto" => $id_producto,
