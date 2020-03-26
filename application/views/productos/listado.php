@@ -160,10 +160,6 @@
                                             <a href="" class="btn btn-info btn-rounded btn-sm editar" data-toggle="modal" data-target="#modal_editar<?php echo $producto["id_producto"]; ?>">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                        <!-- duplicar--><?php/*
-                                            <a href="" class="btn btn-info btn-rounded btn-sm duplicar" data-id="<?php echo $producto["id_producto"];?>" data-toggle="modal" data-target="#modal_duplicar_<?php echo $producto["id_producto"];?>">
-                                                <i class="far fa-copy"></i>
-                                            </a> */ ?>
                                         <!-- eliminar -->
                                             <?php //if($this->session->type === "admin"){ ?>
                                                 <a href="/Producto/eliminar/<?php echo $producto["id_producto"]; ?>" onclick="return eliminar(JSON.stringify('<?php echo $producto['nombre']; ?>'))" class="btn btn-info btn-rounded btn-sm">
@@ -232,56 +228,6 @@
                     </div>
                 </div>
             </div>
-        <!-- Duplicar Producto --><?php /*
-            <div class="row d-flex justify-content-center modalWrapper">
-                <div class="modal fade duplicar" id="modal_duplicar_<?php echo $producto["id_producto"];?>" role="dialog" aria-labellydby="modal_duplicar" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <?php echo form_open("/producto/duplicar"); ?>
-                                <div class="modal-header text-center">
-                                    <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">Duplicar Producto</h4>
-                                    <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body mx-3">
-                                    <div class="row">
-                                        <!-- Nombre -->
-                                            Nombre: <input class="form-control" name="nombre" placeholder="Titulo..." value="<?php if(!empty($datos_ingresados["nombre"])) echo sustituto_tilde($datos_ingresados["nombre"]); else echo sustituto_tilde($producto["nombre"]); ?>" required><br>
-                                        <!-- Descripcion -->
-                                            Descripcion: <input class="form-control" name="descripcion" value="<?php if(!empty($datos_ingresados["descripcion"]))echo sustituto_tilde($datos_ingresados["descripcion"]); else echo sustituto_tilde($producto["descripcion"]); ?>" required> <br>
-                                        <!-- Tipo -->
-                                            Tipo: 
-                                                <select class="form-control" name="tipo">
-                                                    <option selected disabled>Eligir uno</option>
-                                                    <?php 
-                                                        $value = "";
-                                                        switch($datos_ingresados["tipo"]){
-                                                            case "1": $value = "1"; break;
-                                                            case "2": $value = "2"; break;
-                                                            case "3": $value = "3"; break;
-                                                            default:
-                                                                if($producto["tipo"] == "1") $value = "1"; 
-                                                                else if($producto["tipo"] == "2") $value = "2";
-                                                                else if($producto["tipo"] == "3") $value = "3";
-                                                        }
-                                                    ?>
-                                                    <option <?php if($value == 1) echo "selected";?> value="1">Herramienta</option>
-                                                    <option <?php if($value == 2) echo "selected";?> value="2">Material</option>
-                                                    <option <?php if($value == 3) echo "selected";?> value="3">Accesorio</option>
-                                                </select><br>
-                                        <!-- Cantidad -->
-                                            Cantidad: <input class="form-control" type="phone" name="cantidad" min="0" value="<?php if(!empty($datos_ingresados["cantidad"])) echo $datos_ingresados["cantidad"]; else echo $producto["cantidad"]; ?>"><br>
-                                    </div>
-                                </div>
-                                <div class="modal-footer d-flex justify-content-center buttonEditFormWrapper">
-                                    <button id="editar" class="btn btn-primary" type="submit">Duplicar Producto</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div> */ ?>
     <?php } ?>
 </div>
 
