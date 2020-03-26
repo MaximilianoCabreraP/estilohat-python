@@ -209,7 +209,7 @@
                                         <!-- Estado -->
                                             Estado: <select class="form-control" name="estado">
                                                         <option selected disabled>Selecciona un estado</option>
-                                                        <option value="Nuevo" <?php echo $datos_ingresados["estado"]=="Nuevo"?"selected":"";?>>Nuevo</option>
+                                                        <option value="Nuevo" <?php echo in_array("Nuevo",[$datos_ingresados["estado"],$producto["estado"]])?"selected":"";?>>Nuevo</option>
                                                         <option value="Gastado" <?php echo $datos_ingresados["estado"]=="Gastado"?"selected":"";?>>Gastado</option>
                                                         <option value="Renovar" <?php echo $datos_ingresados["estado"]=="Renovar"?"selected":"";?>>Renovar</option>
                                                         <option value="Repuesto" <?php echo $datos_ingresados["estado"]=="Repuesto"?"selected":"";?>>Repuesto</option>
