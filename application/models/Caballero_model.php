@@ -6,6 +6,7 @@
             date_default_timezone_set("America/Argentina/Buenos_Aires");
         }
         public function buscar_caballeros(){
+            log_message("error", "BUsco Caballeros");
             return $this->sskotz->get("caballeros")->result_array();
         }
         public function buscar_caballero($id){
