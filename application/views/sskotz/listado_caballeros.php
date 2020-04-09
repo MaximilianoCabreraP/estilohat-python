@@ -9,6 +9,7 @@
         if(!empty($msj)){
             if($msg=="ok") echo "<div class='alert alert-success text-center' role='alert'>$msj</div>";
             elseif($msg=="error") echo "<div class='alert alert-danger text-center' role='alert'>$msj</div>";
+            else "<div class='alert alert-info text-center' role='alert'>$msj</div>";
         }
     ?>
     
