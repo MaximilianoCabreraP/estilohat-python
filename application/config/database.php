@@ -32,7 +32,7 @@ $db['sskotz'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'saintseiyakotz',
-	'DBDriver' => 'MySQLi',
+	'DBDriver' => 'mysqli',
 	'DBPrefix' => '',
 	'pConnect' => false,
 	'DBDebug'  => (ENVIRONMENT !== 'production'),
