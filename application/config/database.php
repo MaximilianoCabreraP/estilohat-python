@@ -19,31 +19,9 @@ $db['default'] = array(
 	'char_set' => 'utf8',
 	'dbcollat' => 'utf8_general_ci',
 	'swap_pre' => '',
-	'encrypt' => FALSE,
+	'encrypt'  => FALSE,
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => FALSE
-);
-
-$db['sskotz'] = array(
-	'DSN'      => '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'saintseiyakotz',
-	'DBDriver' => 'mysqli',
-	'DBPrefix' => '',
-	'pConnect' => TRUE,
-	'DBDebug'  => (ENVIRONMENT !== 'production'),
-	'cacheOn'  => false,
-	'cacheDir' => '',
-	'charset'  => 'utf8',
-	'DBCollat' => 'utf8_general_ci',
-	'swapPre'  => '',
-	'encrypt'  => false,
-	'compress' => false,
-	'strictOn' => false,
-	'failover' => [],
 	'save_queries' => FALSE
 );
