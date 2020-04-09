@@ -27,7 +27,7 @@ class Caballero extends CI_Controller{
         redirect("sskotz/nuevo-caballero/error");
     }
 
-    public function caballero($nombre){
+    public function saint($nombre){
         $caballero = $this->Caballero_model->buscar_caballero_by_nombre($nombre);
         $this->load->view("sskotz/header", ["title" => "Caballero "]);
         $this->load->view("sskotz/caballero", ["caballero" => $caballero]);
