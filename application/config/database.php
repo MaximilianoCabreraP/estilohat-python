@@ -34,7 +34,7 @@ $db['sskotz'] = array(
 	'database' => 'saintseiyakotz',
 	'DBDriver' => 'mysqli',
 	'DBPrefix' => '',
-	'pConnect' => false,
+	'pConnect' => TRUE,
 	'DBDebug'  => (ENVIRONMENT !== 'production'),
 	'cacheOn'  => false,
 	'cacheDir' => '',
@@ -45,6 +45,5 @@ $db['sskotz'] = array(
 	'compress' => false,
 	'strictOn' => false,
 	'failover' => [],
-	'port'     => 3306,
 	'save_queries' => FALSE
 );
