@@ -18,7 +18,7 @@ class Caballero extends CI_Controller{
     public function agregar_caballero(){
         log_message("error", "------------Agregar Caballero------------");
         $caballero = $this->input->post();
-        if($this->Caballero_model->agregar_caballero($caballero)){
+        if($this->Caballero_model->crear_caballero($caballero)){
             $this->session->set_flashdata("msj", "Se creó la ficha de $caballero[nombre] correctamente.");
             redirect("caballeros/ok");
         }
