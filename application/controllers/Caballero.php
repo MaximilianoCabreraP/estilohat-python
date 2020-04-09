@@ -12,7 +12,7 @@ class Caballero extends CI_Controller{
 	public function nuevo($msg=""){
         log_message("error", "-----Nuevo Caballero-----");
         $this->load->view("sskotz/header", ["title" => "Nuevo Caballero"]);
-        $this->load->view("sskotz/ingresar_caballero");
+        $this->load->view("sskotz/ingresar_caballero", ["caballero" => $this->session->flashdata("caballero")]);
         $this->load->view("sskotz/footer");
     }
     public function agregar_caballero(){
@@ -20,9 +20,17 @@ class Caballero extends CI_Controller{
         $caballero = $this->input->post();
         if($this->Caballero_model->crear_caballero($caballero)){
             $this->session->set_flashdata("msj", "Se creó la ficha de $caballero[nombre] correctamente.");
-            redirect("caballeros/ok");
+            redirect("sskotz/caballeros/ok");
         }
         $this->session->set_flashdata("msj", "No se pudo crear la ficha de $caballero[nombre], volvé a intentarlo.");
-        redirect("caballeros/error");
+        $this->session->set_flashdata("caballero", $caballero);
+        redirect("sskotz/nuevo-caballero/error");
+    }
+
+    public function caballero($nombre){
+        $caballero = $this->Caballero_model->buscar_caballero_by_nombre($nombre);
+        $this->load->view("sskotz/header", ["title" => "Caballero "]);
+        $this->load->view("sskotz/caballero", ["caballero" => $caballero]);
+        $this->load->view("sskotz/footer");
     }
 }
