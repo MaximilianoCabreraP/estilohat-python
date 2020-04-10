@@ -35,6 +35,7 @@ $route["interno/(:any)"] = "interno/getTabla/$1";
 //SSKOTZ
     $route["sskotz/caballeros"] = "caballero/index";
     $route["sskotz/caballeros/([a-z]*)"] = "caballero/index/$1";
+    $route["sskotz/saint"] = "caballero/saint";
     $route["sskotz/saint/([a-z]*)"] = "caballero/saint/$1";
     $route["sskotz/nuevo-caballero"] = "caballero/nuevo";
     $route["sskotz/nuevo-caballero/([a-z]*)"] = "caballero/nuevo/$1";

@@ -22,7 +22,8 @@ class Caballero extends CI_Controller{
         $this->session->set_flashdata("caballero", $caballero);
         redirect("sskotz/nuevo-caballero/error");
     }
-    public function saint($nombre){
+    public function saint(){
+        $nombre = $this->input->get("caballero");
         log_message("error", "Nombre: $nombre");
         $caballero = $this->Caballero_model->buscar_caballero_by_nombre($nombre);
         log_message("error", "Caballero: ".print_r($caballero, true));
