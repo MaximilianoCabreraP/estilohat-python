@@ -35,7 +35,7 @@
                         if(count($caballeros) > 0){
                             foreach($caballeros as $caballero){ ?>
                                 <tr>
-                                    <td><a href="sskotz/saint/<?php echo $caballero["nombre"]; ?>" class="link-texto"><?php echo $caballero["nombre"] ?></a></td>
+                                    <td><a href="/sskotz/saint/<?php echo $caballero["nombre"]; ?>" class="link-texto"><?php echo $caballero["nombre"] ?></a></td>
                                     <td><?php echo $caballero["rango"]; ?></td>
                                     <td><?php echo $caballero["utilidad"]; ?></td>
                                     <td><?php echo $caballero["uso"]; ?></td>
