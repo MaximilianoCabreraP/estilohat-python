@@ -13,6 +13,9 @@
         public function buscar_caballero_by_nombre($nombre){
             return $this->sskotz->get_where("caballeros", ["nombre"=>$nombre])->row_array();
         }
+        public function buscar_skills($id){
+            return $this->sskotz->get_where("skills", ["id" => $id])->row_array();
+        }
         public function crear_caballero($caballero){
             $this->sskotz->insert("caballeros", $caballero);
             return $this->sskotz->affected_rows() > 0;

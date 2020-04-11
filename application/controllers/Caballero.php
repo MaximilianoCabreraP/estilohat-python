@@ -24,10 +24,21 @@ class Caballero extends CI_Controller{
     }
     public function saint(){
         $nombre = $this->input->get("caballero");
-        $caballero = $this->Caballero_model->buscar_caballero_by_nombre($nombre);
+        $caballero = $this->buscar_caballero($nombre);
         $this->load->view("sskotz/header", ["title" => "Caballero "]);
         $this->load->view("sskotz/template/cabecera", ["titulo" => "$nombre de $caballero[constelacion]", "volver"=> "Listado"]);
         $this->load->view("sskotz/saint", ["caballero" => $caballero]);
         $this->load->view("sskotz/footer");
+    }
+
+    public function buscar_caballero($nombre){
+        if($caballero = $this->Caballero_model->buscar_caballero_by_nombre($nombre)){
+            $skills = $this->Caballero_model->buscar_skills($caballero["id"]);
+            $caballero = array_merge($caballero, $skills);
+            return $caballero;
+        }else{
+            $this->session->set_flashdata("msj", "Error con el Caballero o Skills.");
+            redirect("sskotz/caballeros/error");
+        }
     }
 }
