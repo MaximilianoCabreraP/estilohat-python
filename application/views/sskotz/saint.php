@@ -1,8 +1,7 @@
 <style type="text/css">
     .img-caballero{
-        background-repeat:no-repeat;
-        background-position:center top;
-        background-size:contain;
+        max-width: 100%;
+        height: auto;
     }
     .rojo{
         color:red;
@@ -66,7 +65,9 @@
             <div class="box-gris">
                 <h2>Información</h2>
                 <div class="row">                
-                    <div class="col-sm-3 img-caballero" style="background-image:url(<?php echo $caballero["imagen"];?>)">&nbsp;</div>
+                    <div class="col-sm-9 img-caballero">
+                        <img src="<?php echo $caballero["imagen"];?>" />
+                    </div>
                     <div class="col-sm-9 txt-14">
                         <div class="row row-espaciado">
                             <div class="col-8">
