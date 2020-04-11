@@ -38,9 +38,8 @@ class Caballero extends CI_Controller{
         log_message("error", "Busco Caballero");
         if($caballero = $this->Caballero_model->buscar_caballero_by_nombre($nombre)){
             log_message("error", "ID Caballero: $caballero[id]");
-            $skills = $this->Caballero_model->buscar_skills($caballero["id"]);
-            log_message("error", "Skills Caballero: ".print_r($skills, true));
-            $caballero = array_merge($caballero, $skills);
+            $caballero["skills"] = $this->Caballero_model->buscar_skills($caballero["id"]);
+            log_message("error", "Skills Caballero: ".print_r($caballero["skills"], true));
             log_message("error", "Caballero: ".print_r($caballero, true));
             return $caballero;
         }else{

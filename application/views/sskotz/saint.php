@@ -46,16 +46,16 @@
                     <div class="col-sm 9 txt-14">
                         <div class="row row-espaciado">
                             <div class="col-6">
-                                <span class="txt-14"><?php if($caballero["nombre_skill_1"]) echo "Skill 1: ".$caballero["nombre_skill_1"]; ?></span><br>
-                                <span class="txt-14"><?php if($caballero["imagen_skill_1"]) echo $caballero["imagen_skill_1"]; ?></span><br>
-                                <span class="txt-14"><?php if($caballero["nombre_skill_3"]) echo "Skill 3: ".$caballero["nombre_skill_3"]; ?></span><br>
-                                <span class="txt-14"><?php if($caballero["imagen_skill_3"]) echo $caballero["imagen_skill_3"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["nombre_skill_1"]) echo "Skill 1: ".$caballero["skills"]["nombre_skill_1"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["imagen_skill_1"]) echo $caballero["skills"]["imagen_skill_1"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["nombre_skill_3"]) echo "Skill 3: ".$caballero["skills"]["nombre_skill_3"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["imagen_skill_3"]) echo $caballero["skills"]["imagen_skill_3"]; ?></span><br>
                             </div>
                             <div class="col-6">
-                                <span class="txt-14"><?php if($caballero["nombre_skill_2"]) echo "Skill 2: ".$caballero["nombre_skill_2"]; ?></span><br>
-                                <span class="txt-14"><?php if($caballero["imagen_skill_2"]) echo $caballero["imagen_skill_2"]; ?></span><br>
-                                <span class="txt-14"><?php if($caballero["nombre_skill_4"]) echo "Skill 4: ".$caballero["nombre_skill_4"]; ?></span><br>
-                                <span class="txt-14"><?php if($caballero["imagen_skill_4"]) echo $caballero["imagen_skill_4"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["nombre_skill_2"]) echo "Skill 2: ".$caballero["skills"]["nombre_skill_2"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["imagen_skill_2"]) echo $caballero["skills"]["imagen_skill_2"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["nombre_skill_4"]) echo "Skill 4: ".$caballero["skills"]["nombre_skill_4"]; ?></span><br>
+                                <span class="txt-14"><?php if($caballero["skills"]["imagen_skill_4"]) echo $caballero["skills"]["imagen_skill_4"]; ?></span><br>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="box-gris">
-                <h2>>Vínculos</h2>
+                <h2>Vínculos</h2>
                 <div class="row">
                     <div class="col-sm 9 txt-14">
                         <div class="row row-espaciado">
