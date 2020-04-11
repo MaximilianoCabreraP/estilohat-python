@@ -15,7 +15,7 @@
         }
         public function buscar_skills($id){
             log_message("error", "Busco Skill");
-            return $this->sskotz->get_where("skills", ["id" => $id])->result_array();
+            return $this->sskotz->get_where("skills", ["id_caballero" => $id])->result_array();
         }
         public function crear_caballero($caballero){
             $this->sskotz->insert("caballeros", $caballero);
