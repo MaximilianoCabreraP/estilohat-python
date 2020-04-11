@@ -24,10 +24,9 @@ class Caballero extends CI_Controller{
     }
     public function saint(){
         $nombre = $this->input->get("caballero");
-        log_message("error", "Nombre: $nombre");
         $caballero = $this->Caballero_model->buscar_caballero_by_nombre($nombre);
-        log_message("error", "Caballero: ".print_r($caballero, true));
         $this->load->view("sskotz/header", ["title" => "Caballero "]);
+        $this->load->view("sskotz/template/cabecera", ["titulo" => "$nombre de $caballero[constelacion]", "volver"=> "Listado"]);
         $this->load->view("sskotz/saint", ["caballero" => $caballero]);
         $this->load->view("sskotz/footer");
     }
