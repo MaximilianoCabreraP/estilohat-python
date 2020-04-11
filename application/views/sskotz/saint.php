@@ -19,28 +19,6 @@
     <dl class="row">
         <div class="col-sm-8">
             <div class="box-gris">
-                <h2>Información</h2>
-                <div class="row">                
-                    <div class="col-sm-3 img-caballero" style="background-image:url(<?php echo $caballero["imagen"];?>)">&nbsp;</div>
-                    <div class="col-sm-9 txt-14">
-                        <div class="row row-espaciado">
-                            <div class="col-8">
-                                <span class="txt-14"><?php if($caballero["rango"]) echo "Rango: ".$caballero["rango"]; ?></span><br>
-                            </div>
-                            <div class="col-4">
-                                <span class="txt-14"><?php if($caballero["utilidad"]) echo "Utilidad: ".$caballero["utilidad"]; ?></span><br>
-                            </div>
-                        </div>
-                        <div class="row row-espaciado">
-                            <div class="col-8">
-                                <span class="txt-14"><?php if($caballero["uso"]) echo "Uso: ".$caballero["uso"]; ?></span><br>
-                            </div>
-                            <div class="col-4">&nbsp;</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box-gris">
                 <h2>Habilidades</h2>
                 <div class="row">
                     <div class="col-sm 9 txt-14">
@@ -85,5 +63,27 @@
             </div>
         </div>
         <div class="col-sm-4">
+            <div class="box-gris">
+                <h2>Información</h2>
+                <div class="row">                
+                    <div class="col-sm-3 img-caballero" style="background-image:url(<?php echo $caballero["imagen"];?>)">&nbsp;</div>
+                    <div class="col-sm-9 txt-14">
+                        <div class="row row-espaciado">
+                            <div class="col-8">
+                                <span class="txt-14"><?php if($caballero["rango"]) echo "Rango: ".$caballero["rango"]; ?></span><br>
+                            </div>
+                            <div class="col-4">
+                                <span class="txt-14"><?php if($caballero["utilidad"]) echo "Utilidad: ".$caballero["utilidad"]; ?></span><br>
+                            </div>
+                        </div>
+                        <div class="row row-espaciado">
+                            <div class="col-8">
+                                <span class="txt-14"><?php if($caballero["uso"]) echo "Uso: ".$caballero["uso"]; ?></span><br>
+                            </div>
+                            <div class="col-4">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
