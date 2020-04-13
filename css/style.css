@@ -2,24 +2,16 @@
     clear:both;
 }
 header.header-carrito {
-    background:url("https://www.bidcom.com.ar/images/blue90.png");
+    background:#224C71;
     padding: 0;
-    position: sticky;
     z-index: 2000;
+    margin-bottom: 0;
 }
 body{
-    background: #f5f5f5;
+    background: #fff!important;
 }
-.breadcrumb{
-    background: transparent;
-    padding:0;
-    margin:8px 0 2px 0;
-}
-    .breadcrumb a{
-        color:#666;
-    }
-.cabecera-panel{
-    padding-bottom: 15px;
+body.inverse{
+    background-color:#f5f5f5!important;
 }
 /**********************************
 HOME PANEL  					 */
@@ -29,7 +21,10 @@ HOME PANEL  					 */
 .home-panel .btn-info i{
     font-size: 36px;
 }
-
+.tabla-panel{
+    max-width: 100%!important;
+    margin:0!important;
+}
 /**********************************
 Select filtro  					 */
 .select2-selection--single {
@@ -79,16 +74,60 @@ Select filtro  					 */
     color:#ffc107;
 }
 .cabecera-panel{
-    padding:20px 0;
+    padding:5px 0 25px 0;
+    background-color: #f0f3f5;
 }
+    .inverse .cabecera-panel{
+        background-color: #fff;
+    }
+    .cabecera-panel .breadcrumb,
+    .cabecera-panel .breadcrumb2{
+      background: transparent!important;
+      padding:0!important;
+      margin:5px 0 15px 0!important;
+      font-size: 15px;
+      font-weight: 300;
+    }
+        .cabecera-panel .breadcrumb i,
+        .cabecera-panel .breadcrumb2 i{
+            font-weight: 300;
+        }
+        .cabecera-panel .breadcrumb a,
+        .cabecera-panel .breadcrumb2 a{
+          color:#666;
+        }
 .titulo-panel{
     font-size: 22px;
     font-weight: normal;
     text-align: left;
     display:block;
+    margin-bottom:0px;
+}
+    .titulo-panel i{
+        color:#138496;
+    }
+.white-content{
+    padding: 25px 0;
+    border-top: 2px solid #e9ecef;
 }
 #filtro-panel{
     border-top:1px solid #E2E2E2;
     padding: 20px 0 0 0;
     margin-bottom: 20px;
+}
+.paginador{
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+}
+.pagination{
+    display: block;
+    margin-top: 15px!important;
+}
+.pagination li {
+    display: inline-block;
+}
+.dataTables_paginate{
+    text-align: center!important;
 }
